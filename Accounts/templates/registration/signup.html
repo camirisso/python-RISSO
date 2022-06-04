@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'EstudioApp/index.html' %}
 {% load static %}
 
@@ -42,4 +43,50 @@
             </div>
         </div>
     </main>
+=======
+{% extends 'EstudioApp/index.html' %}
+{% load static %}
+
+{% block index_header %}    
+{% endblock index_header %} 
+
+{% block index_noticias %}
+{% endblock index_noticias %}
+
+
+{% block new_content %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({% static 'Accounts/assets/city.jpg' %})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Registro</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!-- Main Content-->
+    <main class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="my-5">
+
+                        {% if msj %}
+                            {{msj}}
+                        {% endif %}
+
+                        <form action="" method="post">
+                            {% csrf_token %}
+                            {{form.as_p}}
+                            <button class="btn btn-primary text-uppercase" id="submitButton" type="submit">Registrarse</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+>>>>>>> origin/main
 {% endblock new_content %}
