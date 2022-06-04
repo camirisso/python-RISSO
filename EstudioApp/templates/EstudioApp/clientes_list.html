@@ -1,0 +1,53 @@
+{% extends 'EstudioApp/index.html' %}
+{% load static %}
+
+
+{% block index_header %}
+{% endblock index_header %}
+
+
+{% block index_noticias %}
+{% endblock index_noticias %}
+
+
+{% block new_content %}
+        <!-- Page Header-->
+        <header class="masthead" style="background-image: url({% static 'EstudioApp/assets/client.jpg' %})">
+            <div class="container position-relative px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-md-10 col-lg-8 col-xl-7">
+                        <div class="page-heading">
+                            <h1>Clientes</h1>
+                            <span class="subheading">Listado de clientes.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    <!-- Main Content-->
+    <main class="mb-4">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="my-5">
+                        <button class="btn btn-primary text-uppercase"><a href={% url 'cliente_create'%}>Crear un cliente</a></button>
+
+                        {% for cliente in clientes_list %}
+                            <li>
+                                {{cliente}}
+
+                                <button class="btn btn-primary text-uppercase"><a href={% url 'cliente_update' cliente.id %}>Editar</a></button>
+                                <button class="btn btn-primary text-uppercase"><a href={% url 'cliente_delete' cliente.id %}>Borrar</a></button>
+
+                            </li>   
+
+
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </main>
+{% endblock new_content %}
